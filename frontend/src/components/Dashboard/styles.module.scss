@@ -1,0 +1,274 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.page {
+  min-height: 100vh;
+  background: $gray-50;
+}
+
+.header {
+  @include page-header;
+}
+
+.headerInner {
+  @include page-content;
+  padding-top: $sp-4;
+  padding-bottom: $sp-4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 1.5rem;
+  color: $gray-900;
+  margin: 0;
+  font-weight: 400;
+}
+
+.btnCreate {
+  @include btn-primary;
+}
+
+.content {
+  @include page-content;
+  padding-top: $sp-8;
+  padding-bottom: $sp-8;
+}
+
+// Stats grid
+.statsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $sp-6;
+  margin-bottom: $sp-8;
+
+  @media (min-width: $md) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.statCard {
+  background: $white;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-sm;
+  padding: $sp-6;
+  border: 1px solid $gray-200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.statInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: $gray-600;
+}
+
+.statValue {
+  font-size: 1.875rem;
+  margin-top: $sp-2;
+  color: $gray-900;
+  font-weight: 400;
+}
+
+.statIcon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: $radius-lg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.statIconBlue   { background: $blue-100;   svg { color: $blue-600; } }
+.statIconGreen  { background: $green-100;  svg { color: $green-600; } }
+.statIconPurple { background: $purple-100; svg { color: $purple-600; } }
+.statIconOrange { background: $orange-100; svg { color: $orange-600; } }
+
+// Overview card
+.overviewCard {
+  background: $white;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-sm;
+  border: 1px solid $gray-200;
+  padding: $sp-6;
+  margin-bottom: $sp-8;
+}
+
+.overviewHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $sp-6;
+}
+
+.overviewTitle {
+  font-size: 1.25rem;
+  color: $gray-900;
+  margin: 0;
+  font-weight: 400;
+}
+
+.versionBadge {
+  padding: $sp-1 $sp-3;
+  border-radius: $radius-full;
+  font-size: 0.875rem;
+}
+
+.versionBadgePublished {
+  background: $green-100;
+  color: $green-700;
+}
+
+.versionBadgeDraft {
+  background: $yellow-100;
+  color: $yellow-700;
+}
+
+.overviewMeta {
+  font-size: 0.875rem;
+  color: $gray-600;
+  margin-bottom: $sp-4;
+}
+
+.viewLink {
+  font-size: 0.875rem;
+  color: $blue-600;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  &:hover { color: $blue-700; }
+}
+
+// Language completion
+.completionCard {
+  background: $white;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-sm;
+  border: 1px solid $gray-200;
+  padding: $sp-6;
+}
+
+.completionTitle {
+  font-size: 1.25rem;
+  color: $gray-900;
+  margin: 0 0 $sp-6;
+  font-weight: 400;
+}
+
+.completionList {
+  display: flex;
+  flex-direction: column;
+  gap: $sp-4;
+}
+
+.langRow {
+  display: flex;
+  flex-direction: column;
+  gap: $sp-2;
+}
+
+.langHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.langInfo {
+  display: flex;
+  align-items: center;
+  gap: $sp-3;
+}
+
+.langFlag {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.langName {
+  font-size: 0.875rem;
+  color: $gray-900;
+}
+
+.langCode {
+  font-size: 0.75rem;
+  color: $gray-500;
+}
+
+.langPercent {
+  font-size: 0.875rem;
+  color: $gray-900;
+}
+
+.progressBar {
+  width: 100%;
+  background: $gray-200;
+  border-radius: $radius-full;
+  height: 0.5rem;
+}
+
+.progressFill {
+  height: 0.5rem;
+  border-radius: $radius-full;
+  transition: width 0.15s;
+}
+
+.progressFillFull { background: $green-500; }
+.progressFillMid  { background: $blue-500; }
+.progressFillLow  { background: $red-500; }
+
+// Quick actions
+.actionsGrid {
+  margin-top: $sp-8;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $sp-6;
+
+  @media (min-width: $md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.actionCard {
+  background: $white;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-sm;
+  border: 1px solid $gray-200;
+  padding: $sp-6;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s;
+
+  &:hover { border-color: $blue-300; }
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: $sp-3;
+  }
+}
+
+.actionTitle {
+  font-size: 1.125rem;
+  color: $gray-900;
+  margin: 0 0 $sp-2;
+  font-weight: 400;
+}
+
+.actionDesc {
+  font-size: 0.875rem;
+  color: $gray-600;
+  margin: 0;
+}

@@ -1,0 +1,384 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+// Layout
+.layout {
+  min-height: 100vh;
+  background: $gray-50;
+  display: flex;
+}
+
+// Sidebar
+.sidebar {
+  width: 16rem;
+  background: $white;
+  border-right: 1px solid $gray-200;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.sidebarNav {
+  padding: $sp-6;
+  border-bottom: 1px solid $gray-200;
+}
+
+.backBtn {
+  font-size: 0.875rem;
+  color: $gray-600;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: block;
+  margin-bottom: $sp-4;
+
+  &:hover { color: $gray-900; }
+}
+
+.sidebarTitle {
+  font-size: 1.125rem;
+  color: $gray-900;
+  margin: 0;
+  font-weight: 400;
+}
+
+.sidebarSection {
+  padding: $sp-6;
+  border-bottom: 1px solid $gray-200;
+}
+
+.sidebarLabel {
+  display: block;
+  font-size: 0.875rem;
+  color: $gray-700;
+  margin-bottom: $sp-2;
+}
+
+.sidebarLabelLg {
+  display: block;
+  font-size: 0.875rem;
+  color: $gray-700;
+  margin-bottom: $sp-3;
+}
+
+.versionSelect {
+  @include input-base;
+}
+
+.langList {
+  display: flex;
+  flex-direction: column;
+  gap: $sp-2;
+}
+
+.langBtn {
+  width: 100%;
+  padding: $sp-2 $sp-3;
+  border-radius: $radius-lg;
+  text-align: left;
+  background: $white;
+  border: 1px solid $gray-200;
+  cursor: pointer;
+  transition: border-color 0.15s;
+
+  &:hover { border-color: $gray-300; }
+}
+
+.langBtnActive {
+  background: $blue-50;
+  border: 2px solid $blue-500;
+}
+
+.langHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $sp-1;
+}
+
+.langInfo {
+  display: flex;
+  align-items: center;
+  gap: $sp-2;
+}
+
+.langFlag {
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+.langCode {
+  font-size: 0.875rem;
+  color: $gray-900;
+}
+
+.langPercent {
+  font-size: 0.75rem;
+  color: $gray-600;
+}
+
+.progressBar {
+  width: 100%;
+  background: $gray-200;
+  border-radius: $radius-full;
+  height: 0.25rem;
+}
+
+.progressFill {
+  height: 0.25rem;
+  border-radius: $radius-full;
+  background: $blue-500;
+}
+
+.progressFillComplete {
+  background: $green-500;
+}
+
+.statsBox {
+  margin-top: auto;
+  padding: $sp-6;
+  border-top: 1px solid $gray-200;
+}
+
+.statsInner {
+  background: $gray-50;
+  border-radius: $radius-lg;
+  padding: $sp-4;
+}
+
+.statsHint {
+  font-size: 0.75rem;
+  color: $gray-600;
+  margin-bottom: $sp-2;
+}
+
+.statsPercent {
+  font-size: 1.5rem;
+  color: $gray-900;
+  margin-bottom: $sp-1;
+}
+
+.statsLabel {
+  font-size: 0.75rem;
+  color: $gray-600;
+}
+
+// Main content
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.mainHeader {
+  background: $white;
+  border-bottom: 1px solid $gray-200;
+  padding: $sp-4 $sp-6;
+}
+
+.mainHeaderTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $sp-4;
+}
+
+.mainTitle {
+  font-size: 1.5rem;
+  color: $gray-900;
+  margin: 0;
+  font-weight: 400;
+}
+
+.mainSubtitle {
+  font-size: 0.875rem;
+  color: $gray-600;
+  margin-top: $sp-1;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: $sp-3;
+}
+
+.btnOutline {
+  @include btn-secondary;
+}
+
+.btnSave {
+  @include btn-primary;
+}
+
+.btnSaveDisabled {
+  @include btn-base;
+  background: $gray-100;
+  color: $gray-400;
+  cursor: not-allowed;
+  border-color: $gray-100;
+
+  &:hover {
+    background: $gray-100;
+    border-color: $gray-100;
+  }
+}
+
+// Search
+.searchWrapper {
+  position: relative;
+}
+
+.searchIcon {
+  position: absolute;
+  left: $sp-3;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.25rem;
+  height: 1.25rem;
+  color: $gray-400;
+  pointer-events: none;
+}
+
+.searchInput {
+  @include input-base;
+  padding-left: $sp-10;
+}
+
+// Unsaved banner
+.unsavedBanner {
+  background: $yellow-50;
+  border-bottom: 1px solid $yellow-200;
+  padding: $sp-3 $sp-6;
+  display: flex;
+  align-items: center;
+  gap: $sp-2;
+  font-size: 0.875rem;
+  color: $yellow-800;
+}
+
+// Table area
+.tableArea {
+  flex: 1;
+  overflow: auto;
+}
+
+.tableContainer {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: $sp-6;
+}
+
+.tableCard {
+  background: $white;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-sm;
+  border: 1px solid $gray-200;
+  overflow: hidden;
+}
+
+.table {
+  @include table-base;
+}
+
+.thead {
+  background: $gray-50;
+  border-bottom: 1px solid $gray-200;
+}
+
+.th {
+  @include table-th;
+
+  &:first-child  { width: 25%; }
+  &:nth-child(2) { width: 50%; }
+  &:nth-child(3) { width: 8rem; }
+  &:nth-child(4) { width: 6rem; }
+}
+
+.tbody {
+  tr + tr {
+    border-top: 1px solid $gray-200;
+  }
+}
+
+.row {
+  transition: background-color 0.15s;
+
+  &:hover { background: $gray-50; }
+}
+
+.rowMissing {
+  background: $red-50;
+
+  &:hover { background: $red-50; }
+}
+
+.emptyCell {
+  @include table-td;
+  text-align: center;
+  color: $gray-500;
+  padding-top: $sp-12;
+  padding-bottom: $sp-12;
+}
+
+.keyCell {
+  @include table-td;
+}
+
+.keyCode {
+  font-size: 0.875rem;
+  color: $gray-900;
+  font-family: monospace;
+}
+
+.valueCell {
+  @include table-td;
+}
+
+.valueInput {
+  @include input-base;
+  border-color: $gray-300;
+}
+
+.valueInputError {
+  border-color: $red-300;
+}
+
+.valueInputEdited {
+  background: $blue-50;
+}
+
+.dateCell {
+  @include table-td;
+  font-size: 0.875rem;
+  color: $gray-600;
+}
+
+.statusCell {
+  @include table-td;
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: $sp-1 $sp-2 + 0.125rem;
+  border-radius: $radius-full;
+  font-size: 0.75rem;
+
+  svg {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+}
+
+.statusMissing {
+  background: $red-100;
+  color: $red-700;
+}
+
+.statusDone {
+  background: $green-100;
+  color: $green-700;
+}

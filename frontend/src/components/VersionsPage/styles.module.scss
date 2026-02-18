@@ -1,0 +1,165 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.page {
+  min-height: 100vh;
+  background: $gray-50;
+}
+
+.header {
+  @include page-header;
+}
+
+.headerInner {
+  @include page-content;
+  padding-top: $sp-4;
+  padding-bottom: $sp-4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.backBtn {
+  font-size: 0.875rem;
+  color: $gray-600;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  margin-bottom: $sp-2;
+
+  &:hover { color: $gray-900; }
+}
+
+.title {
+  font-size: 1.5rem;
+  color: $gray-900;
+  margin: 0;
+  font-weight: 400;
+}
+
+.content {
+  @include page-content;
+  padding-top: $sp-8;
+  padding-bottom: $sp-8;
+}
+
+.tableCard {
+  background: $white;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-sm;
+  border: 1px solid $gray-200;
+  overflow: hidden;
+}
+
+.table {
+  @include table-base;
+}
+
+.thead {
+  background: $gray-50;
+  border-bottom: 1px solid $gray-200;
+}
+
+.th {
+  @include table-th;
+}
+
+.thRight {
+  @include table-th;
+  text-align: right;
+}
+
+.tbody {
+  tr + tr {
+    border-top: 1px solid $gray-200;
+  }
+}
+
+.row {
+  transition: background-color 0.15s;
+
+  &:hover { background: $gray-50; }
+}
+
+.versionCell {
+  @include table-td;
+}
+
+.versionName {
+  color: $gray-900;
+}
+
+.statusCell {
+  @include table-td;
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: $sp-1 $sp-3;
+  border-radius: $radius-full;
+  font-size: 0.875rem;
+
+  svg {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+}
+
+.statusPublished {
+  background: $green-100;
+  color: $green-700;
+}
+
+.statusDraft {
+  background: $yellow-100;
+  color: $yellow-700;
+}
+
+.dateCell {
+  @include table-td;
+  color: $gray-600;
+}
+
+.actionsCell {
+  @include table-td;
+}
+
+.actionsRow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: $sp-2;
+}
+
+.iconBtn {
+  @include btn-ghost;
+  color: $gray-600;
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+.publishBtn {
+  @include btn-base;
+  padding: $sp-2 $sp-4;
+  background: $green-600;
+  color: $white;
+  font-size: 0.875rem;
+  border-color: $green-600;
+
+  &:hover {
+    background: $green-700;
+    border-color: $green-700;
+  }
+}

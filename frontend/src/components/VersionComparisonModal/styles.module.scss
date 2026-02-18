@@ -1,0 +1,212 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.overlay {
+  @include modal-overlay;
+}
+
+.container {
+  @include modal-container;
+  max-width: 72rem;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $sp-6;
+  border-bottom: 1px solid $gray-200;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: $gray-900;
+  margin: 0;
+  font-weight: 400;
+}
+
+.closeBtn {
+  @include btn-ghost;
+  color: $gray-400;
+
+  &:hover {
+    color: $gray-600;
+    background: transparent;
+  }
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+.controls {
+  padding: $sp-6;
+  border-bottom: 1px solid $gray-200;
+  background: $gray-50;
+  flex-shrink: 0;
+}
+
+.controlsRow {
+  display: flex;
+  align-items: center;
+  gap: $sp-4;
+}
+
+.select {
+  @include input-base;
+  flex: 1;
+}
+
+.selectNarrow {
+  @include input-base;
+  width: 8rem;
+  flex: none;
+}
+
+.arrow {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: $gray-400;
+  flex-shrink: 0;
+}
+
+.statsRow {
+  display: flex;
+  align-items: center;
+  gap: $sp-6;
+  margin-top: $sp-4;
+  font-size: 0.875rem;
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: $sp-2;
+  color: $gray-600;
+}
+
+.statDot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: $radius-sm;
+}
+
+.statDotSame    { background: $gray-300; }
+.statDotDiff    { background: $yellow-400; }
+.statDotAdded   { background: $green-400; }
+.statDotRemoved { background: $red-400; }
+
+.tableWrapper {
+  flex: 1;
+  overflow: auto;
+}
+
+.table {
+  @include table-base;
+}
+
+.thead {
+  background: $gray-50;
+  border-bottom: 1px solid $gray-200;
+  position: sticky;
+  top: 0;
+}
+
+.th {
+  @include table-th;
+
+  &:first-child { width: 25%; }
+  &:nth-child(2),
+  &:nth-child(3) { width: 37.5%; }
+}
+
+.tbody {
+  tr + tr {
+    border-top: 1px solid $gray-200;
+  }
+}
+
+.rowSame    { background: $white; }
+.rowDiff    { background: $yellow-50; }
+.rowAdded   { background: $green-50; }
+.rowRemoved { background: $red-50; }
+
+.keyCell {
+  @include table-td;
+  display: flex;
+  align-items: center;
+  gap: $sp-2;
+}
+
+.keyDot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: $radius-full;
+  flex-shrink: 0;
+}
+
+.keyDotSame    { background: $gray-300; }
+.keyDotDiff    { background: $yellow-400; }
+.keyDotAdded   { background: $green-400; }
+.keyDotRemoved { background: $red-400; }
+
+.keyCode {
+  font-size: 0.875rem;
+  color: $gray-900;
+  font-family: monospace;
+}
+
+.valueCell {
+  @include table-td;
+}
+
+.valueText {
+  font-size: 0.875rem;
+  color: $gray-900;
+}
+
+.valueRemoved {
+  color: $red-700;
+  text-decoration: line-through;
+}
+
+.valueAdded {
+  color: $green-700;
+  font-weight: 500;
+}
+
+.valueMissing {
+  color: $gray-400;
+  font-style: italic;
+  font-size: 0.875rem;
+}
+
+.valueEmpty {
+  color: $gray-400;
+  font-style: italic;
+}
+
+.footer {
+  padding: $sp-6;
+  border-top: 1px solid $gray-200;
+  background: $gray-50;
+  flex-shrink: 0;
+}
+
+.btnClose {
+  @include btn-base;
+  padding: $sp-2 $sp-6;
+  background: $gray-900;
+  color: $white;
+  border-color: $gray-900;
+
+  &:hover {
+    background: #1f2937;
+  }
+}

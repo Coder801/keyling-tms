@@ -1,0 +1,130 @@
+@use 'variables' as *;
+
+// Input / Select / Textarea base
+@mixin input-base {
+  width: 100%;
+  padding: $sp-2 $sp-3;
+  border: 1px solid $gray-300;
+  border-radius: $radius-lg;
+  background: $white;
+  color: $gray-900;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-family: inherit;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px $blue-500;
+    border-color: $blue-500;
+  }
+}
+
+@mixin input-error {
+  border-color: $red-300;
+
+  &:focus {
+    box-shadow: 0 0 0 2px $red-500;
+    border-color: $red-300;
+  }
+}
+
+// Buttons
+@mixin btn-base {
+  display: inline-flex;
+  align-items: center;
+  gap: $sp-2;
+  padding: $sp-2 $sp-4;
+  border-radius: $radius-lg;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+  border: 1px solid transparent;
+}
+
+@mixin btn-primary {
+  @include btn-base;
+  background: $blue-600;
+  color: $white;
+  border-color: $blue-600;
+
+  &:hover {
+    background: $blue-700;
+    border-color: $blue-700;
+  }
+}
+
+@mixin btn-secondary {
+  @include btn-base;
+  background: $white;
+  color: $gray-700;
+  border-color: $gray-300;
+
+  &:hover {
+    background: $gray-50;
+  }
+}
+
+@mixin btn-ghost {
+  @include btn-base;
+  background: transparent;
+  color: $gray-600;
+  border-color: transparent;
+  padding: $sp-2;
+
+  &:hover {
+    background: $gray-100;
+  }
+}
+
+// Modal
+@mixin modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+@mixin modal-container {
+  background: $white;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-xl;
+  width: 100%;
+  margin: 0 $sp-4;
+}
+
+// Page layout
+@mixin page-header {
+  background: $white;
+  border-bottom: 1px solid $gray-200;
+}
+
+@mixin page-content {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 $sp-6;
+}
+
+// Table
+@mixin table-base {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+@mixin table-th {
+  padding: $sp-4 $sp-6;
+  text-align: left;
+  font-size: 0.75rem;
+  color: $gray-600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+@mixin table-td {
+  padding: $sp-4 $sp-6;
+}

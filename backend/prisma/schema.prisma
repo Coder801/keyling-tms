@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Translation {
+  id        String   @id @default(uuid())
+  key       String
+  value     String
+  language  String
+  version   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([key, language, version])
+}
+
+model Version {
+  id        String   @id @default(uuid())
+  name      String   @unique
+  status    String
+  createdAt DateTime @default(now())
+}

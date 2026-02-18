@@ -1,0 +1,1 @@
+export { AddTranslationModal } from "./AddTranslationModal";
