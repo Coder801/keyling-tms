@@ -3,7 +3,7 @@
 
 .page {
   min-height: 100vh;
-  background: $gray-50;
+  background: $color-bg-page;
 }
 
 .header {
@@ -26,7 +26,7 @@
 
 .backBtn {
   font-size: 0.875rem;
-  color: $gray-600;
+  color: $color-text-muted;
   background: none;
   border: none;
   padding: 0;
@@ -34,12 +34,12 @@
   text-align: left;
   margin-bottom: $sp-2;
 
-  &:hover { color: $gray-900; }
+  &:hover { color: $color-text; }
 }
 
 .title {
   font-size: 1.5rem;
-  color: $gray-900;
+  color: $color-text;
   margin: 0;
   font-weight: 400;
 }
@@ -51,10 +51,10 @@
 }
 
 .tableCard {
-  background: $white;
+  background: $color-bg-card;
   border-radius: $radius-xl;
   box-shadow: $shadow-sm;
-  border: 1px solid $gray-200;
+  border: 1px solid $color-border-card;
   overflow: hidden;
 }
 
@@ -63,8 +63,8 @@
 }
 
 .thead {
-  background: $gray-50;
-  border-bottom: 1px solid $gray-200;
+  background: $color-bg-page;
+  border-bottom: 1px solid $color-border;
 }
 
 .th {
@@ -78,14 +78,14 @@
 
 .tbody {
   tr + tr {
-    border-top: 1px solid $gray-200;
+    border-top: 1px solid $color-border;
   }
 }
 
 .row {
   transition: background-color 0.15s;
 
-  &:hover { background: $gray-50; }
+  &:hover { background: $color-bg-page; }
 }
 
 .versionCell {
@@ -93,7 +93,7 @@
 }
 
 .versionName {
-  color: $gray-900;
+  color: $color-text;
 }
 
 .statusCell {
@@ -115,18 +115,18 @@
 }
 
 .statusPublished {
-  background: $green-100;
-  color: $green-700;
+  background: $color-success-bg;
+  color: $color-success-text;
 }
 
 .statusDraft {
-  background: $yellow-100;
-  color: $yellow-700;
+  background: $color-warning-bg;
+  color: $color-warning-text;
 }
 
 .dateCell {
   @include table-td;
-  color: $gray-600;
+  color: $color-text-muted;
 }
 
 .actionsCell {
@@ -142,7 +142,7 @@
 
 .iconBtn {
   @include btn-ghost;
-  color: $gray-600;
+  color: $color-text-muted;
 
   svg {
     width: 1rem;

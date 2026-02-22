@@ -1,0 +1,65 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.form {
+  padding: $sp-6;
+  display: flex;
+  flex-direction: column;
+  gap: $sp-5;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  display: block;
+  font-size: 0.875rem;
+  color: $color-text;
+  margin-bottom: $sp-2;
+}
+
+.required {
+  color: $red-500;
+}
+
+.input {
+  @include input-base;
+}
+
+.inputError {
+  @include input-error;
+}
+
+.select {
+  @include input-base;
+}
+
+.errorText {
+  font-size: 0.75rem;
+  color: $red-600;
+  margin-top: $sp-1;
+}
+
+.hint {
+  font-size: 0.75rem;
+  color: $color-text-muted;
+  margin-top: $sp-1;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: $sp-3;
+  padding-top: $sp-4;
+}
+
+.btnCancel {
+  @include btn-secondary;
+}
+
+.btnSubmit {
+  @include btn-primary;
+}

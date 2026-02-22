@@ -8,7 +8,8 @@
  *
  * 🟢 You can import this file directly.
  */
-export type * from './models/Translation'
+export type * from './models/Translations'
+export type * from './models/TranslationHistory'
 export type * from './models/Version'
 export type * from './models/User'
 export type * from './commonInputTypes'

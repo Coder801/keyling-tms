@@ -51,7 +51,8 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-  Translation: 'Translation',
+  Translations: 'Translations',
+  TranslationHistory: 'TranslationHistory',
   Version: 'Version',
   User: 'User'
 } as const
@@ -72,7 +73,7 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
-export const TranslationScalarFieldEnum = {
+export const TranslationsScalarFieldEnum = {
   id: 'id',
   key: 'key',
   value: 'value',
@@ -82,7 +83,18 @@ export const TranslationScalarFieldEnum = {
   updatedAt: 'updatedAt'
 } as const
 
-export type TranslationScalarFieldEnum = (typeof TranslationScalarFieldEnum)[keyof typeof TranslationScalarFieldEnum]
+export type TranslationsScalarFieldEnum = (typeof TranslationsScalarFieldEnum)[keyof typeof TranslationsScalarFieldEnum]
+
+
+export const TranslationHistoryScalarFieldEnum = {
+  id: 'id',
+  translationId: 'translationId',
+  oldValue: 'oldValue',
+  editedBy: 'editedBy',
+  editedAt: 'editedAt'
+} as const
+
+export type TranslationHistoryScalarFieldEnum = (typeof TranslationHistoryScalarFieldEnum)[keyof typeof TranslationHistoryScalarFieldEnum]
 
 
 export const VersionScalarFieldEnum = {

@@ -1,8 +1,8 @@
 export type TranslationStatus = "translated" | "missing";
-export type Page = "dashboard" | "versions" | "editor";
 export type VersionStatus = "draft" | "published";
 
 export type Translation = {
+  id: string;
   key: string;
   value: string;
   lastUpdated: string;

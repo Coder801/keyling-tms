@@ -3,7 +3,7 @@
 
 .page {
   min-height: 100vh;
-  background: $gray-50;
+  background: $color-bg-page;
 }
 
 .header {
@@ -21,7 +21,7 @@
 
 .title {
   font-size: 1.5rem;
-  color: $gray-900;
+  color: $color-text;
   margin: 0;
   font-weight: 400;
 }
@@ -49,11 +49,11 @@
 }
 
 .statCard {
-  background: $white;
+  background: $color-bg-card;
   border-radius: $radius-xl;
   box-shadow: $shadow-sm;
   padding: $sp-6;
-  border: 1px solid $gray-200;
+  border: 1px solid $color-border-card;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -66,13 +66,13 @@
 
 .statLabel {
   font-size: 0.875rem;
-  color: $gray-600;
+  color: $color-text-muted;
 }
 
 .statValue {
   font-size: 1.875rem;
   margin-top: $sp-2;
-  color: $gray-900;
+  color: $color-text;
   font-weight: 400;
 }
 
@@ -97,10 +97,10 @@
 
 // Overview card
 .overviewCard {
-  background: $white;
+  background: $color-bg-card;
   border-radius: $radius-xl;
   box-shadow: $shadow-sm;
-  border: 1px solid $gray-200;
+  border: 1px solid $color-border-card;
   padding: $sp-6;
   margin-bottom: $sp-8;
 }
@@ -114,7 +114,7 @@
 
 .overviewTitle {
   font-size: 1.25rem;
-  color: $gray-900;
+  color: $color-text;
   margin: 0;
   font-weight: 400;
 }
@@ -126,44 +126,44 @@
 }
 
 .versionBadgePublished {
-  background: $green-100;
-  color: $green-700;
+  background: $color-success-bg;
+  color: $color-success-text;
 }
 
 .versionBadgeDraft {
-  background: $yellow-100;
-  color: $yellow-700;
+  background: $color-warning-bg;
+  color: $color-warning-text;
 }
 
 .overviewMeta {
   font-size: 0.875rem;
-  color: $gray-600;
+  color: $color-text-muted;
   margin-bottom: $sp-4;
 }
 
 .viewLink {
   font-size: 0.875rem;
-  color: $blue-600;
+  color: $color-primary;
   background: none;
   border: none;
   padding: 0;
   cursor: pointer;
 
-  &:hover { color: $blue-700; }
+  &:hover { color: $color-primary-hover; }
 }
 
 // Language completion
 .completionCard {
-  background: $white;
+  background: $color-bg-card;
   border-radius: $radius-xl;
   box-shadow: $shadow-sm;
-  border: 1px solid $gray-200;
+  border: 1px solid $color-border-card;
   padding: $sp-6;
 }
 
 .completionTitle {
   font-size: 1.25rem;
-  color: $gray-900;
+  color: $color-text;
   margin: 0 0 $sp-6;
   font-weight: 400;
 }
@@ -199,22 +199,22 @@
 
 .langName {
   font-size: 0.875rem;
-  color: $gray-900;
+  color: $color-text;
 }
 
 .langCode {
   font-size: 0.75rem;
-  color: $gray-500;
+  color: $color-text-muted;
 }
 
 .langPercent {
   font-size: 0.875rem;
-  color: $gray-900;
+  color: $color-text;
 }
 
 .progressBar {
   width: 100%;
-  background: $gray-200;
+  background: $color-border;
   border-radius: $radius-full;
   height: 0.5rem;
 }
@@ -242,16 +242,16 @@
 }
 
 .actionCard {
-  background: $white;
+  background: $color-bg-card;
   border-radius: $radius-xl;
   box-shadow: $shadow-sm;
-  border: 1px solid $gray-200;
+  border: 1px solid $color-border-card;
   padding: $sp-6;
   text-align: left;
   cursor: pointer;
   transition: border-color 0.15s;
 
-  &:hover { border-color: $blue-300; }
+  &:hover { border-color: $color-primary; }
 
   svg {
     width: 2rem;
@@ -262,13 +262,13 @@
 
 .actionTitle {
   font-size: 1.125rem;
-  color: $gray-900;
+  color: $color-text;
   margin: 0 0 $sp-2;
   font-weight: 400;
 }
 
 .actionDesc {
   font-size: 0.875rem;
-  color: $gray-600;
+  color: $color-text-muted;
   margin: 0;
 }

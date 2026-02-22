@@ -28,7 +28,7 @@ export * from "./enums"
  * ```
  * const prisma = new PrismaClient()
  * // Fetch zero or more Translations
- * const translations = await prisma.translation.findMany()
+ * const translations = await prisma.translations.findMany()
  * ```
  * 
  * Read more in our [docs](https://pris.ly/d/client).
@@ -38,10 +38,15 @@ export type PrismaClient<LogOpts extends Prisma.LogLevel = never, OmitOpts exten
 export { Prisma }
 
 /**
- * Model Translation
+ * Model Translations
  * 
  */
-export type Translation = Prisma.TranslationModel
+export type Translations = Prisma.TranslationsModel
+/**
+ * Model TranslationHistory
+ * 
+ */
+export type TranslationHistory = Prisma.TranslationHistoryModel
 /**
  * Model Version
  * 

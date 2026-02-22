@@ -1,0 +1,56 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.overlay {
+  @include modal-overlay;
+}
+
+.container {
+  @include modal-container;
+}
+
+.containerSm {
+  max-width: 28rem;
+}
+
+.containerLg {
+  max-width: 72rem;
+}
+
+.containerScrollable {
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $sp-6;
+  border-bottom: 1px solid $color-border;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: $color-text;
+  margin: 0;
+  font-weight: 400;
+}
+
+.closeBtn {
+  @include btn-ghost;
+  color: $color-text-muted;
+
+  &:hover {
+    color: $color-text;
+    background: transparent;
+  }
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}

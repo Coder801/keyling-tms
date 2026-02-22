@@ -1,21 +1,21 @@
-@use 'variables' as *;
+@use "variables" as *;
 
 // Input / Select / Textarea base
 @mixin input-base {
   width: 100%;
   padding: $sp-2 $sp-3;
-  border: 1px solid $gray-300;
+  border: 1px solid $color-input-border;
   border-radius: $radius-lg;
-  background: $white;
-  color: $gray-900;
+  background: $color-bg-card;
+  color: $color-text;
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-family: inherit;
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 2px $blue-500;
-    border-color: $blue-500;
+    box-shadow: 0 0 0 2px $color-primary;
+    border-color: $color-primary;
   }
 }
 
@@ -39,42 +39,45 @@
   font-weight: 500;
   font-family: inherit;
   cursor: pointer;
-  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+  transition:
+    background-color 0.15s,
+    border-color 0.15s,
+    color 0.15s;
   border: 1px solid transparent;
 }
 
 @mixin btn-primary {
   @include btn-base;
-  background: $blue-600;
-  color: $white;
-  border-color: $blue-600;
+  background: $color-primary;
+  color: $color-primary-fg;
+  border-color: $color-primary;
 
   &:hover {
-    background: $blue-700;
-    border-color: $blue-700;
+    background: $color-primary-hover;
+    border-color: $color-primary-hover;
   }
 }
 
 @mixin btn-secondary {
   @include btn-base;
-  background: $white;
-  color: $gray-700;
-  border-color: $gray-300;
+  background: $color-bg-card;
+  color: $color-text;
+  border-color: $color-border;
 
   &:hover {
-    background: $gray-50;
+    background: $color-bg-page;
   }
 }
 
 @mixin btn-ghost {
   @include btn-base;
   background: transparent;
-  color: $gray-600;
+  color: $color-text-muted;
   border-color: transparent;
   padding: $sp-2;
 
   &:hover {
-    background: $gray-100;
+    background: $color-bg-muted;
   }
 }
 
@@ -90,7 +93,7 @@
 }
 
 @mixin modal-container {
-  background: $white;
+  background: $color-bg-card;
   border-radius: $radius-xl;
   box-shadow: $shadow-xl;
   width: 100%;
@@ -99,8 +102,8 @@
 
 // Page layout
 @mixin page-header {
-  background: $white;
-  border-bottom: 1px solid $gray-200;
+  background: $color-bg-card;
+  border-bottom: 1px solid $color-border;
 }
 
 @mixin page-content {
@@ -119,7 +122,7 @@
   padding: $sp-4 $sp-6;
   text-align: left;
   font-size: 0.75rem;
-  color: $gray-600;
+  color: $color-text-muted;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: 600;

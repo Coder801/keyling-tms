@@ -7,16 +7,32 @@ datasource db {
   provider = "postgresql"
 }
 
-model Translation {
+model Translations {
   id        String   @id @default(uuid())
   key       String
   value     String
   language  String
   version   String
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
+  history   TranslationHistory[]
+
   @@unique([key, language, version])
+}
+
+model TranslationHistory {
+  id            String   @id @default(uuid())
+
+  translationId String
+  translation   Translations @relation(fields: [translationId], references: [id], onDelete: Cascade)
+
+  oldValue      String
+  editedBy      String  
+  editedAt      DateTime @default(now())
+
+  @@index([translationId, editedAt])
 }
 
 model Version {

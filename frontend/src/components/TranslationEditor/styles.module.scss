@@ -4,15 +4,15 @@
 // Layout
 .layout {
   min-height: 100vh;
-  background: $gray-50;
+  background: $color-bg-page;
   display: flex;
 }
 
 // Sidebar
 .sidebar {
   width: 16rem;
-  background: $white;
-  border-right: 1px solid $gray-200;
+  background: $color-bg-sidebar;
+  border-right: 1px solid $color-border-sidebar;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -20,12 +20,12 @@
 
 .sidebarNav {
   padding: $sp-6;
-  border-bottom: 1px solid $gray-200;
+  border-bottom: 1px solid $color-border-sidebar;
 }
 
 .backBtn {
   font-size: 0.875rem;
-  color: $gray-600;
+  color: $color-text-muted;
   background: none;
   border: none;
   padding: 0;
@@ -33,32 +33,32 @@
   display: block;
   margin-bottom: $sp-4;
 
-  &:hover { color: $gray-900; }
+  &:hover { color: $color-text-sidebar; }
 }
 
 .sidebarTitle {
   font-size: 1.125rem;
-  color: $gray-900;
+  color: $color-text-sidebar;
   margin: 0;
   font-weight: 400;
 }
 
 .sidebarSection {
   padding: $sp-6;
-  border-bottom: 1px solid $gray-200;
+  border-bottom: 1px solid $color-border-sidebar;
 }
 
 .sidebarLabel {
   display: block;
   font-size: 0.875rem;
-  color: $gray-700;
+  color: $color-text-sidebar;
   margin-bottom: $sp-2;
 }
 
 .sidebarLabelLg {
   display: block;
   font-size: 0.875rem;
-  color: $gray-700;
+  color: $color-text-sidebar;
   margin-bottom: $sp-3;
 }
 
@@ -77,17 +77,17 @@
   padding: $sp-2 $sp-3;
   border-radius: $radius-lg;
   text-align: left;
-  background: $white;
-  border: 1px solid $gray-200;
+  background: $color-bg-sidebar;
+  border: 1px solid $color-border-sidebar;
   cursor: pointer;
   transition: border-color 0.15s;
 
-  &:hover { border-color: $gray-300; }
+  &:hover { border-color: $color-border; }
 }
 
 .langBtnActive {
-  background: $blue-50;
-  border: 2px solid $blue-500;
+  background: $color-primary-subtle;
+  border: 2px solid $color-primary;
 }
 
 .langHeader {
@@ -110,17 +110,17 @@
 
 .langCode {
   font-size: 0.875rem;
-  color: $gray-900;
+  color: $color-text-sidebar;
 }
 
 .langPercent {
   font-size: 0.75rem;
-  color: $gray-600;
+  color: $color-text-muted;
 }
 
 .progressBar {
   width: 100%;
-  background: $gray-200;
+  background: $color-border-sidebar;
   border-radius: $radius-full;
   height: 0.25rem;
 }
@@ -128,7 +128,7 @@
 .progressFill {
   height: 0.25rem;
   border-radius: $radius-full;
-  background: $blue-500;
+  background: $color-primary;
 }
 
 .progressFillComplete {
@@ -138,30 +138,30 @@
 .statsBox {
   margin-top: auto;
   padding: $sp-6;
-  border-top: 1px solid $gray-200;
+  border-top: 1px solid $color-border-sidebar;
 }
 
 .statsInner {
-  background: $gray-50;
+  background: $color-bg-page;
   border-radius: $radius-lg;
   padding: $sp-4;
 }
 
 .statsHint {
   font-size: 0.75rem;
-  color: $gray-600;
+  color: $color-text-muted;
   margin-bottom: $sp-2;
 }
 
 .statsPercent {
   font-size: 1.5rem;
-  color: $gray-900;
+  color: $color-text-sidebar;
   margin-bottom: $sp-1;
 }
 
 .statsLabel {
   font-size: 0.75rem;
-  color: $gray-600;
+  color: $color-text-muted;
 }
 
 // Main content
@@ -173,8 +173,8 @@
 }
 
 .mainHeader {
-  background: $white;
-  border-bottom: 1px solid $gray-200;
+  background: $color-bg-card;
+  border-bottom: 1px solid $color-border;
   padding: $sp-4 $sp-6;
 }
 
@@ -187,14 +187,14 @@
 
 .mainTitle {
   font-size: 1.5rem;
-  color: $gray-900;
+  color: $color-text;
   margin: 0;
   font-weight: 400;
 }
 
 .mainSubtitle {
   font-size: 0.875rem;
-  color: $gray-600;
+  color: $color-text-muted;
   margin-top: $sp-1;
 }
 
@@ -214,14 +214,14 @@
 
 .btnSaveDisabled {
   @include btn-base;
-  background: $gray-100;
-  color: $gray-400;
+  background: $color-bg-muted;
+  color: $color-text-muted;
   cursor: not-allowed;
-  border-color: $gray-100;
+  border-color: $color-border;
 
   &:hover {
-    background: $gray-100;
-    border-color: $gray-100;
+    background: $color-bg-muted;
+    border-color: $color-border;
   }
 }
 
@@ -237,7 +237,7 @@
   transform: translateY(-50%);
   width: 1.25rem;
   height: 1.25rem;
-  color: $gray-400;
+  color: $color-text-muted;
   pointer-events: none;
 }
 
@@ -248,14 +248,14 @@
 
 // Unsaved banner
 .unsavedBanner {
-  background: $yellow-50;
-  border-bottom: 1px solid $yellow-200;
+  background: $color-warning-bg;
+  border-bottom: 1px solid $color-warning-border;
   padding: $sp-3 $sp-6;
   display: flex;
   align-items: center;
   gap: $sp-2;
   font-size: 0.875rem;
-  color: $yellow-800;
+  color: $color-warning-text;
 }
 
 // Table area
@@ -271,10 +271,10 @@
 }
 
 .tableCard {
-  background: $white;
+  background: $color-bg-card;
   border-radius: $radius-xl;
   box-shadow: $shadow-sm;
-  border: 1px solid $gray-200;
+  border: 1px solid $color-border-card;
   overflow: hidden;
 }
 
@@ -283,8 +283,8 @@
 }
 
 .thead {
-  background: $gray-50;
-  border-bottom: 1px solid $gray-200;
+  background: $color-bg-page;
+  border-bottom: 1px solid $color-border;
 }
 
 .th {
@@ -298,26 +298,26 @@
 
 .tbody {
   tr + tr {
-    border-top: 1px solid $gray-200;
+    border-top: 1px solid $color-border;
   }
 }
 
 .row {
   transition: background-color 0.15s;
 
-  &:hover { background: $gray-50; }
+  &:hover { background: $color-bg-page; }
 }
 
 .rowMissing {
-  background: $red-50;
+  background: $color-danger-bg;
 
-  &:hover { background: $red-50; }
+  &:hover { background: $color-danger-bg; }
 }
 
 .emptyCell {
   @include table-td;
   text-align: center;
-  color: $gray-500;
+  color: $color-text-muted;
   padding-top: $sp-12;
   padding-bottom: $sp-12;
 }
@@ -328,7 +328,7 @@
 
 .keyCode {
   font-size: 0.875rem;
-  color: $gray-900;
+  color: $color-text;
   font-family: monospace;
 }
 
@@ -338,7 +338,7 @@
 
 .valueInput {
   @include input-base;
-  border-color: $gray-300;
+  border-color: $color-input-border;
 }
 
 .valueInputError {
@@ -346,13 +346,13 @@
 }
 
 .valueInputEdited {
-  background: $blue-50;
+  background: $color-primary-subtle;
 }
 
 .dateCell {
   @include table-td;
   font-size: 0.875rem;
-  color: $gray-600;
+  color: $color-text-muted;
 }
 
 .statusCell {
@@ -374,11 +374,11 @@
 }
 
 .statusMissing {
-  background: $red-100;
-  color: $red-700;
+  background: $color-danger-bg;
+  color: $color-danger-text;
 }
 
 .statusDone {
-  background: $green-100;
-  color: $green-700;
+  background: $color-success-bg;
+  color: $color-success-text;
 }
