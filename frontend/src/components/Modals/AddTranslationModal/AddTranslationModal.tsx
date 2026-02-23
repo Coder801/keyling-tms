@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import type { AddTranslationModalProps } from "./types";
 import { useGetVersionsQuery } from "@/services/versionsApi";
 import { Modal } from "@/ui/Modal";
+import { Button } from "@/ui/Button";
 import styles from "./styles.module.scss";
 
 export const AddTranslationModal = ({
@@ -141,12 +142,12 @@ export const AddTranslationModal = ({
         </div>
 
         <div className={styles.actions}>
-          <button type="button" onClick={handleClose} className={styles.btnCancel}>
+          <Button type="button" variant="secondary" onClick={handleClose}>
             Cancel
-          </button>
-          <button type="submit" className={styles.btnSubmit}>
+          </Button>
+          <Button type="submit">
             Add Translation
-          </button>
+          </Button>
         </div>
       </form>
     </Modal>

@@ -24,38 +24,15 @@
   flex-direction: column;
 }
 
-.backBtn {
-  font-size: 0.875rem;
-  color: $color-text-muted;
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  text-align: left;
-  margin-bottom: $sp-2;
-
-  &:hover { color: $color-text; }
-}
 
 .title {
-  font-size: 1.5rem;
-  color: $color-text;
   margin: 0;
-  font-weight: 400;
 }
 
 .content {
   @include page-content;
   padding-top: $sp-8;
   padding-bottom: $sp-8;
-}
-
-.tableCard {
-  background: $color-bg-card;
-  border-radius: $radius-xl;
-  box-shadow: $shadow-sm;
-  border: 1px solid $color-border-card;
-  overflow: hidden;
 }
 
 .table {
@@ -140,15 +117,6 @@
   gap: $sp-2;
 }
 
-.iconBtn {
-  @include btn-ghost;
-  color: $color-text-muted;
-
-  svg {
-    width: 1rem;
-    height: 1rem;
-  }
-}
 
 .publishBtn {
   @include btn-base;

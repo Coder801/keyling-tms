@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router";
-import { Dashboard } from "@/components/Dashboard";
-import { VersionsPage } from "@/components/VersionsPage";
-import { TranslationEditor } from "@/components/TranslationEditor";
+import { Dashboard } from "@/modules/Dashboard";
+import { VersionsPage } from "@/modules/VersionsPage";
+import { TranslationEditor } from "@/modules/TranslationEditor";
 import { AddTranslationModal } from "@/components/Modals/AddTranslationModal";
 import { CreateVersionModal } from "@/components/Modals/CreateVersionModal";
 import { VersionComparisonModal } from "@/components/Modals/VersionComparisonModal";

@@ -3,6 +3,9 @@ import { Languages, FileText, TrendingUp, GitBranch } from "lucide-react";
 import { languages } from "@/data/mockData";
 import { useGetTranslationsQuery } from "@/services/translationsApi";
 import { useGetVersionsQuery } from "@/services/versionsApi";
+import { Button } from "@/ui/Button";
+import { Card } from "@/ui/Card";
+import { Typography } from "@/ui/Typography";
 import type { DashboardProps } from "./types";
 import styles from "./styles.module.scss";
 
@@ -39,61 +42,65 @@ export const Dashboard = ({ onCreateVersion }: DashboardProps) => {
     <div className={styles.page}>
       <div className={styles.header}>
         <div className={styles.headerInner}>
-          <h1 className={styles.title}>Translation Management</h1>
-          <button onClick={onCreateVersion} className={styles.btnCreate}>
+          <Typography tag="h1" weight="normal" className={styles.title}>
+            Translation Management
+          </Typography>
+          <Button onClick={onCreateVersion}>
             Create New Version
-          </button>
+          </Button>
         </div>
       </div>
 
       <div className={styles.content}>
         <div className={styles.statsGrid}>
-          <div className={styles.statCard}>
+          <Card className={styles.statCard}>
             <div className={styles.statInfo}>
-              <p className={styles.statLabel}>Total Versions</p>
+              <Typography size="xs" className={styles.statLabel}>Total Versions</Typography>
               <p className={styles.statValue}>{versions.length}</p>
             </div>
             <div className={`${styles.statIcon} ${styles.statIconBlue}`}>
               <GitBranch />
             </div>
-          </div>
+          </Card>
 
-          <div className={styles.statCard}>
+          <Card className={styles.statCard}>
             <div className={styles.statInfo}>
-              <p className={styles.statLabel}>Languages</p>
+              <Typography size="xs" className={styles.statLabel}>Languages</Typography>
               <p className={styles.statValue}>{languages.length}</p>
             </div>
             <div className={`${styles.statIcon} ${styles.statIconGreen}`}>
               <Languages />
             </div>
-          </div>
+          </Card>
 
-          <div className={styles.statCard}>
+          <Card className={styles.statCard}>
             <div className={styles.statInfo}>
-              <p className={styles.statLabel}>Translation Keys</p>
+              <Typography size="xs" className={styles.statLabel}>Translation Keys</Typography>
               <p className={styles.statValue}>{totalKeys}</p>
             </div>
             <div className={`${styles.statIcon} ${styles.statIconPurple}`}>
               <FileText />
             </div>
-          </div>
+          </Card>
 
-          <div className={styles.statCard}>
+          <Card className={styles.statCard}>
             <div className={styles.statInfo}>
-              <p className={styles.statLabel}>Latest Version</p>
+              <Typography size="xs" className={styles.statLabel}>Latest Version</Typography>
               <p className={styles.statValue}>{latestVersion?.name ?? "—"}</p>
             </div>
             <div className={`${styles.statIcon} ${styles.statIconOrange}`}>
               <TrendingUp />
             </div>
-          </div>
+          </Card>
         </div>
 
         {latestVersion && (
           <>
-            <div className={styles.overviewCard}>
+            <Card className={styles.overviewCard}>
               <div className={styles.overviewHeader}>
-                <h2 className={styles.overviewTitle}>Latest Version Overview</h2>
+                <Typography tag="h2" weight="normal" className={styles.overviewTitle}>
+                  Latest Version Overview
+                </Typography>
                 <span
                   className={`${styles.versionBadge} ${
                     latestVersion.status === "published"
@@ -105,22 +112,22 @@ export const Dashboard = ({ onCreateVersion }: DashboardProps) => {
                     latestVersion.status.slice(1)}
                 </span>
               </div>
-              <p className={styles.overviewMeta}>
+              <Typography size="xs" className={styles.overviewMeta}>
                 Version {latestVersion.name} • Created{" "}
                 {new Date(latestVersion.createdDate).toLocaleDateString()}
-              </p>
-              <button
+              </Typography>
+              <Button
+                variant="link"
                 onClick={() => navigate("/versions")}
-                className={styles.viewLink}
               >
                 View all versions →
-              </button>
-            </div>
+              </Button>
+            </Card>
 
-            <div className={styles.completionCard}>
-              <h2 className={styles.completionTitle}>
+            <Card>
+              <Typography tag="h2" weight="normal" className={styles.completionTitle}>
                 Language Completion ({latestVersion.name})
-              </h2>
+              </Typography>
               <div className={styles.completionList}>
                 {languages.map((lang) => {
                   const completion = getLanguageCompletion(lang.code);
@@ -130,8 +137,8 @@ export const Dashboard = ({ onCreateVersion }: DashboardProps) => {
                         <div className={styles.langInfo}>
                           <span className={styles.langFlag}>{lang.flag}</span>
                           <div>
-                            <p className={styles.langName}>{lang.name}</p>
-                            <p className={styles.langCode}>{lang.code}</p>
+                            <Typography size="xs">{lang.name}</Typography>
+                            <Typography size="xs" className={styles.langCode}>{lang.code}</Typography>
                           </div>
                         </div>
                         <span className={styles.langPercent}>{completion}%</span>
@@ -146,7 +153,7 @@ export const Dashboard = ({ onCreateVersion }: DashboardProps) => {
                   );
                 })}
               </div>
-            </div>
+            </Card>
           </>
         )}
 
@@ -156,10 +163,12 @@ export const Dashboard = ({ onCreateVersion }: DashboardProps) => {
             className={styles.actionCard}
           >
             <FileText style={{ color: "#2563eb" }} />
-            <h3 className={styles.actionTitle}>Translation Editor</h3>
-            <p className={styles.actionDesc}>
+            <Typography tag="h3" weight="normal" className={styles.actionTitle}>
+              Translation Editor
+            </Typography>
+            <Typography size="xs" className={styles.actionDesc}>
               Edit and manage translation keys and values
-            </p>
+            </Typography>
           </button>
 
           <button
@@ -167,10 +176,12 @@ export const Dashboard = ({ onCreateVersion }: DashboardProps) => {
             className={styles.actionCard}
           >
             <GitBranch style={{ color: "#16a34a" }} />
-            <h3 className={styles.actionTitle}>Version Management</h3>
-            <p className={styles.actionDesc}>
+            <Typography tag="h3" weight="normal" className={styles.actionTitle}>
+              Version Management
+            </Typography>
+            <Typography size="xs" className={styles.actionDesc}>
               View, edit, and publish translation versions
-            </p>
+            </Typography>
           </button>
         </div>
       </div>

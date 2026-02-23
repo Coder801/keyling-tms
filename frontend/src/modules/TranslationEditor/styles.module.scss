@@ -23,24 +23,10 @@
   border-bottom: 1px solid $color-border-sidebar;
 }
 
-.backBtn {
-  font-size: 0.875rem;
-  color: $color-text-muted;
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  display: block;
-  margin-bottom: $sp-4;
-
-  &:hover { color: $color-text-sidebar; }
-}
 
 .sidebarTitle {
-  font-size: 1.125rem;
   color: $color-text-sidebar;
   margin: 0;
-  font-weight: 400;
 }
 
 .sidebarSection {
@@ -148,7 +134,6 @@
 }
 
 .statsHint {
-  font-size: 0.75rem;
   color: $color-text-muted;
   margin-bottom: $sp-2;
 }
@@ -160,7 +145,6 @@
 }
 
 .statsLabel {
-  font-size: 0.75rem;
   color: $color-text-muted;
 }
 
@@ -186,14 +170,10 @@
 }
 
 .mainTitle {
-  font-size: 1.5rem;
-  color: $color-text;
   margin: 0;
-  font-weight: 400;
 }
 
 .mainSubtitle {
-  font-size: 0.875rem;
   color: $color-text-muted;
   margin-top: $sp-1;
 }
@@ -202,27 +182,6 @@
   display: flex;
   align-items: center;
   gap: $sp-3;
-}
-
-.btnOutline {
-  @include btn-secondary;
-}
-
-.btnSave {
-  @include btn-primary;
-}
-
-.btnSaveDisabled {
-  @include btn-base;
-  background: $color-bg-muted;
-  color: $color-text-muted;
-  cursor: not-allowed;
-  border-color: $color-border;
-
-  &:hover {
-    background: $color-bg-muted;
-    border-color: $color-border;
-  }
 }
 
 // Search
@@ -268,14 +227,6 @@
   max-width: 80rem;
   margin: 0 auto;
   padding: $sp-6;
-}
-
-.tableCard {
-  background: $color-bg-card;
-  border-radius: $radius-xl;
-  box-shadow: $shadow-sm;
-  border: 1px solid $color-border-card;
-  overflow: hidden;
 }
 
 .table {

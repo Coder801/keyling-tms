@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import type { CreateVersionModalProps } from "./types";
 import { useGetVersionsQuery, useCreateVersionMutation } from "@/services/versionsApi";
 import { Modal } from "@/ui/Modal";
+import { Button } from "@/ui/Button";
 import { toast } from "sonner";
 import styles from "./styles.module.scss";
 
@@ -84,12 +85,12 @@ export const CreateVersionModal = ({ isOpen, onClose }: CreateVersionModalProps)
         </div>
 
         <div className={styles.actions}>
-          <button type="button" onClick={handleClose} className={styles.btnCancel}>
+          <Button type="button" variant="secondary" onClick={handleClose}>
             Cancel
-          </button>
-          <button type="submit" disabled={isLoading} className={styles.btnSubmit}>
+          </Button>
+          <Button type="submit" disabled={isLoading}>
             {isLoading ? "Creating..." : "Create Version"}
-          </button>
+          </Button>
         </div>
       </form>
     </Modal>

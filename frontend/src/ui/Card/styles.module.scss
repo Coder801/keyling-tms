@@ -1,0 +1,17 @@
+@use "../../styles/variables" as *;
+
+.card {
+  background: $color-bg-card;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-sm;
+  border: 1px solid $color-border-card;
+  padding: $sp-6;
+}
+
+.noPadding {
+  padding: 0;
+}
+
+.overflowHidden {
+  overflow: hidden;
+}

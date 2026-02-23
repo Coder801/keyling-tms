@@ -131,3 +131,71 @@
 @mixin table-td {
   padding: $sp-4 $sp-6;
 }
+
+// Desktop-first approach: max-width media queries
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == sm {
+    @media (max-width: 479px) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (max-width: 1023px) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (max-width: 1439px) {
+      @content;
+    }
+  }
+}
+
+// Helper mixin for mobile-only styles (max-width)
+@mixin mobile-only($breakpoint: md) {
+  $breakpoint-value: 767px;
+
+  @if $breakpoint == sm {
+    $breakpoint-value: 479px;
+  } @else if $breakpoint == md {
+    $breakpoint-value: 767px;
+  } @else if $breakpoint == lg {
+    $breakpoint-value: 1023px;
+  }
+
+  @media (max-width: $breakpoint-value) {
+    @content;
+  }
+}
+
+@mixin decorative-heading(
+  $line-width: 40px,
+  $gap: var(--space-sm),
+  $line-color: var(--color-text-secondary)
+) {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+
+  &::before,
+  &::after {
+    background-color: $line-color;
+    content: "";
+    display: block;
+    height: 1px;
+    margin: 0 $gap;
+    width: $line-width;
+  }
+
+  &::before {
+    margin-left: 0;
+  }
+
+  &::after {
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,79 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.base {
+  @include btn-base;
+}
+
+.primary {
+  background: $color-primary;
+  color: $color-primary-fg;
+  border-color: $color-primary;
+
+  &:hover:not(:disabled) {
+    background: $color-primary-hover;
+    border-color: $color-primary-hover;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.secondary {
+  background: $color-bg-card;
+  color: $color-text;
+  border-color: $color-border;
+
+  &:hover:not(:disabled) {
+    background: $color-bg-page;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.ghost {
+  background: transparent;
+  color: $color-text-muted;
+  border-color: transparent;
+  padding: $sp-2;
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  &:hover:not(:disabled) {
+    background: $color-bg-muted;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.link {
+  background: none;
+  border-color: transparent;
+  padding: 0;
+  color: $color-text-muted;
+
+  &:hover:not(:disabled) {
+    color: $color-text;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.sm {
+  padding: $sp-1 $sp-3;
+  font-size: 0.8125rem;
+}

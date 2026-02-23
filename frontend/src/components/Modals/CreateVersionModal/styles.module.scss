@@ -55,11 +55,3 @@
   gap: $sp-3;
   padding-top: $sp-4;
 }
-
-.btnCancel {
-  @include btn-secondary;
-}
-
-.btnSubmit {
-  @include btn-primary;
-}

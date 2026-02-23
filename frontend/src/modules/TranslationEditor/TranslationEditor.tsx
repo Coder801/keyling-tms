@@ -5,6 +5,9 @@ import type { Translation } from "@/types";
 import type { TranslationEditorProps } from "./types";
 import { useGetTranslationsQuery } from "@/services/translationsApi";
 import { useGetVersionsQuery } from "@/services/versionsApi";
+import { Button } from "@/ui/Button";
+import { Card } from "@/ui/Card";
+import { Typography } from "@/ui/Typography";
 import styles from "./styles.module.scss";
 
 export const TranslationEditor = ({
@@ -60,10 +63,12 @@ export const TranslationEditor = ({
       {/* Sidebar */}
       <div className={styles.sidebar}>
         <div className={styles.sidebarNav}>
-          <button onClick={() => navigate("/")} className={styles.backBtn}>
+          <Button variant="link" onClick={() => navigate("/")}>
             ← Dashboard
-          </button>
-          <h2 className={styles.sidebarTitle}>Filters</h2>
+          </Button>
+          <Typography tag="h2" weight="normal" className={styles.sidebarTitle}>
+            Filters
+          </Typography>
         </div>
 
         <div className={styles.sidebarSection}>
@@ -113,11 +118,11 @@ export const TranslationEditor = ({
 
         <div className={styles.statsBox}>
           <div className={styles.statsInner}>
-            <p className={styles.statsHint}>Current Progress</p>
+            <Typography size="xs" className={styles.statsHint}>Current Progress</Typography>
             <p className={styles.statsPercent}>{completionPercentage}%</p>
-            <p className={styles.statsLabel}>
+            <Typography size="xs" className={styles.statsLabel}>
               {translatedCount} of {filteredTranslations.length} keys
-            </p>
+            </Typography>
           </div>
         </div>
       </div>
@@ -127,20 +132,22 @@ export const TranslationEditor = ({
         <div className={styles.mainHeader}>
           <div className={styles.mainHeaderTop}>
             <div>
-              <h1 className={styles.mainTitle}>Translation Editor</h1>
-              <p className={styles.mainSubtitle}>
+              <Typography tag="h1" weight="normal" className={styles.mainTitle}>
+                Translation Editor
+              </Typography>
+              <Typography size="xs" className={styles.mainSubtitle}>
                 {selectedLanguage} • {selectedVersion}
-              </p>
+              </Typography>
             </div>
             <div className={styles.headerActions}>
-              <button onClick={onCompareVersions} className={styles.btnOutline}>
+              <Button variant="secondary" onClick={onCompareVersions}>
                 <GitCompare />
                 Compare Versions
-              </button>
-              <button onClick={onAddTranslation} className={styles.btnOutline}>
+              </Button>
+              <Button variant="secondary" onClick={onAddTranslation}>
                 <Plus />
                 Add Key
-              </button>
+              </Button>
             </div>
           </div>
 
@@ -158,7 +165,7 @@ export const TranslationEditor = ({
 
         <div className={styles.tableArea}>
           <div className={styles.tableContainer}>
-            <div className={styles.tableCard}>
+            <Card noPadding overflowHidden>
               <table className={styles.table}>
                 <thead className={styles.thead}>
                   <tr>
@@ -231,7 +238,7 @@ export const TranslationEditor = ({
                   )}
                 </tbody>
               </table>
-            </div>
+            </Card>
           </div>
         </div>
       </div>

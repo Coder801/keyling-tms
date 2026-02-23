@@ -2,6 +2,9 @@ import { useNavigate } from "react-router";
 import { Copy, Edit, CheckCircle, Clock } from "lucide-react";
 import { useGetVersionsQuery, usePublishVersionMutation } from "@/services/versionsApi";
 import { toast } from "sonner";
+import { Button } from "@/ui/Button";
+import { Card } from "@/ui/Card";
+import { Typography } from "@/ui/Typography";
 import styles from "./styles.module.scss";
 
 export const VersionsPage = () => {
@@ -26,16 +29,18 @@ export const VersionsPage = () => {
       <div className={styles.header}>
         <div className={styles.headerInner}>
           <div className={styles.headerLeft}>
-            <button onClick={() => navigate("/")} className={styles.backBtn}>
+            <Button variant="link" onClick={() => navigate("/")}>
               ← Back to Dashboard
-            </button>
-            <h1 className={styles.title}>Translation Versions</h1>
+            </Button>
+            <Typography tag="h1" weight="normal" className={styles.title}>
+              Translation Versions
+            </Typography>
           </div>
         </div>
       </div>
 
       <div className={styles.content}>
-        <div className={styles.tableCard}>
+        <Card noPadding overflowHidden>
           <table className={styles.table}>
             <thead className={styles.thead}>
               <tr>
@@ -83,27 +88,27 @@ export const VersionsPage = () => {
                     </td>
                     <td className={styles.actionsCell}>
                       <div className={styles.actionsRow}>
-                        <button
+                        <Button
+                          variant="ghost"
                           onClick={() => navigate("/editor")}
-                          className={styles.iconBtn}
                           title="Edit translations"
                         >
                           <Edit />
-                        </button>
-                        <button
+                        </Button>
+                        <Button
+                          variant="ghost"
                           onClick={() => toast.info("Duplicate coming soon")}
-                          className={styles.iconBtn}
                           title="Duplicate version"
                         >
                           <Copy />
-                        </button>
+                        </Button>
                         {version.status === "draft" && (
-                          <button
+                          <Button
                             onClick={() => handlePublish(version.id)}
                             className={styles.publishBtn}
                           >
                             Publish
-                          </button>
+                          </Button>
                         )}
                       </div>
                     </td>
@@ -112,7 +117,7 @@ export const VersionsPage = () => {
               )}
             </tbody>
           </table>
-        </div>
+        </Card>
       </div>
     </div>
   );
