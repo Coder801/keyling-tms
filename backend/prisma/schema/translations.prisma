@@ -1,12 +1,3 @@
-generator client {
-  provider = "prisma-client"
-  output   = "../src/generated/prisma"
-}
-
-datasource db {
-  provider = "postgresql"
-}
-
 model Translations {
   id        String   @id @default(uuid())
   key       String
@@ -17,6 +8,7 @@ model Translations {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
+  lang      Languages            @relation(fields: [language], references: [code])
   history   TranslationHistory[]
 
   @@unique([key, language, version])
@@ -29,22 +21,8 @@ model TranslationHistory {
   translation   Translations @relation(fields: [translationId], references: [id], onDelete: Cascade)
 
   oldValue      String
-  editedBy      String  
+  editedBy      String
   editedAt      DateTime @default(now())
 
   @@index([translationId, editedAt])
-}
-
-model Version {
-  id        String   @id @default(uuid())
-  name      String   @unique
-  status    String
-  createdAt DateTime @default(now())
-}
-
-model User {
-  id        String   @id @default(uuid())
-  email     String   @unique
-  password  String
-  createdAt DateTime @default(now())
 }

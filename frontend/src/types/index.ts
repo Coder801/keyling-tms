@@ -18,8 +18,13 @@ export type Version = {
   createdDate: string;
 };
 
+export type LanguageStatus = "active" | "draft";
+
 export type Language = {
+  id: string;
   code: string;
   name: string;
-  flag: string;
+  flag: string | null;
+  status: LanguageStatus;
+  createdAt: string;
 };

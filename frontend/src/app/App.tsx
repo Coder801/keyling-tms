@@ -3,9 +3,11 @@ import { Routes, Route } from "react-router";
 import { Dashboard } from "@/modules/Dashboard";
 import { VersionsPage } from "@/modules/VersionsPage";
 import { TranslationEditor } from "@/modules/TranslationEditor";
+import { LanguagesPage } from "@/modules/LanguagesPage";
 import { AddTranslationModal } from "@/components/Modals/AddTranslationModal";
 import { CreateVersionModal } from "@/components/Modals/CreateVersionModal";
 import { VersionComparisonModal } from "@/components/Modals/VersionComparisonModal";
+import { AddLanguageModal } from "@/components/Modals/AddLanguageModal";
 import { languages } from "../data/mockData";
 import { toast, Toaster } from "sonner";
 
@@ -14,6 +16,7 @@ export default function App() {
   const [isCreateVersionModalOpen, setIsCreateVersionModalOpen] =
     useState(false);
   const [isComparisonModalOpen, setIsComparisonModalOpen] = useState(false);
+  const [isAddLanguageModalOpen, setIsAddLanguageModalOpen] = useState(false);
 
   const handleAddTranslation = (
     key: string,
@@ -37,6 +40,14 @@ export default function App() {
           }
         />
         <Route path="/versions" element={<VersionsPage />} />
+        <Route
+          path="/languages"
+          element={
+            <LanguagesPage
+              onAddLanguage={() => setIsAddLanguageModalOpen(true)}
+            />
+          }
+        />
         <Route
           path="/editor"
           element={
@@ -64,6 +75,11 @@ export default function App() {
       <VersionComparisonModal
         isOpen={isComparisonModalOpen}
         onClose={() => setIsComparisonModalOpen(false)}
+      />
+
+      <AddLanguageModal
+        isOpen={isAddLanguageModalOpen}
+        onClose={() => setIsAddLanguageModalOpen(false)}
       />
 
       <Toaster position="top-right" />

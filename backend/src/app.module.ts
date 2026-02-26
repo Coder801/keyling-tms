@@ -4,6 +4,7 @@ import { PrismaModule } from './prisma/prisma.module';
 import { TranslationsModule } from './translations/translations.module';
 import { TranslationsHistoryModule } from './translations-history/translations-history.module';
 import { VersionsModule } from './versions/versions.module';
+import { LanguagesModule } from './languages/languages.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { VersionsModule } from './versions/versions.module';
     TranslationsModule,
     TranslationsHistoryModule,
     VersionsModule,
+    LanguagesModule,
   ],
   controllers: [],
   providers: [],

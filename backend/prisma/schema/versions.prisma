@@ -1,0 +1,6 @@
+model Version {
+  id        String   @id @default(uuid())
+  name      String   @unique
+  status    String
+  createdAt DateTime @default(now())
+}

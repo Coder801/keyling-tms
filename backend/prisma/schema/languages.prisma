@@ -1,0 +1,10 @@
+model Languages {
+  id           String         @id @default(uuid())
+  name         String         @unique
+  code         String         @unique
+  flag         String?
+  status       String
+  createdAt    DateTime       @default(now())
+
+  translations Translations[]
+}

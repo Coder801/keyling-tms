@@ -1,0 +1,136 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.page {
+  min-height: 100vh;
+  background: $color-bg-page;
+}
+
+.header {
+  @include page-header;
+}
+
+.headerInner {
+  @include page-content;
+  padding-top: $sp-4;
+  padding-bottom: $sp-4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin: 0;
+}
+
+.content {
+  @include page-content;
+  padding-top: $sp-8;
+  padding-bottom: $sp-8;
+}
+
+.table {
+  @include table-base;
+}
+
+.thead {
+  background: $color-bg-page;
+  border-bottom: 1px solid $color-border;
+}
+
+.th {
+  @include table-th;
+}
+
+.thRight {
+  @include table-th;
+  text-align: right;
+}
+
+.tbody {
+  tr + tr {
+    border-top: 1px solid $color-border;
+  }
+}
+
+.row {
+  transition: background-color 0.15s;
+
+  &:hover { background: $color-bg-page; }
+}
+
+.emptyCell {
+  @include table-td;
+  text-align: center;
+  color: $color-text-muted;
+  padding-top: $sp-12;
+  padding-bottom: $sp-12;
+}
+
+.langCell {
+  @include table-td;
+  display: flex;
+  align-items: center;
+  gap: $sp-3;
+}
+
+.flag {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.langName {
+  color: $color-text;
+}
+
+.codeCell {
+  @include table-td;
+}
+
+.code {
+  font-family: monospace;
+  font-size: 0.875rem;
+  color: $color-text;
+  background: $color-bg-page;
+  border: 1px solid $color-border;
+  padding: $sp-1 $sp-2;
+  border-radius: $radius-md;
+}
+
+.statusCell {
+  @include table-td;
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: $sp-1 $sp-3;
+  border-radius: $radius-full;
+  font-size: 0.875rem;
+}
+
+.statusActive {
+  background: $color-success-bg;
+  color: $color-success-text;
+}
+
+.statusDraft {
+  background: $color-warning-bg;
+  color: $color-warning-text;
+}
+
+.actionsCell {
+  @include table-td;
+}
+
+.actionsRow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: $sp-2;
+}
